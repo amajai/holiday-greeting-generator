@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Holiday Greeting Generator App</title>
+</head>
+<body>
+    <div class="container mt-5 mx-6">
+        <form id="form">
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <label class="label">Holiday <span class='has-text-danger'>*</span></label>
+                        <div class="control">
+                          <input class="input" type="text" id='holiday' placeholder="e.g: Xmas, New Year, Eid" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Receiver Name</label>
+                        <div class="control">
+                          <input class="input" type="text" id='receiver_name' placeholder="Text input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <label class="label">Receiver Location</label>
+                        <div class="control">
+                          <input class="input" type="text" id='receiver_location' placeholder="Text input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <label class="label">Relation</label>
+                        <div class="control is-expanded">
+                            <div class="select is-fullwidth">
+                              <select id="select_relation" name="selected_relation">
+                                <option value="Friend">Friend</option>
+                                <option value="Sibling">Sibling</option>
+                                <option value="Acquaintance">Acquaintance</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Parent">Parent</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Greeting Type</label>
+                        <div class="control is-expanded">
+                            <div class="select is-fullwidth">
+                              <select id="select_type" name="selected_type">
+                                <option value="Message">Message</option>
+                                <option value="Poem">Poem</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Keywords</label>
+                <div class="control">
+                  <input class="input" type="text" id="keywords" placeholder="Text input">
+                </div>
+                <p class="help">Hightlight the words to be mentioned on the greeting. Separate keywords with spaces</p>
+            </div>
+     
+            <div class="control">
+                <button  type="submit" class="button is-info">Submit</button>
+            </div>
+        </form>
+        <div id="output"></div>
+    </div>
+
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</html>

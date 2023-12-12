@@ -1,0 +1,5 @@
+#output {
+    padding: 15px 15px;
+    overflow-y: scroll;
+    height: 300px;
+}

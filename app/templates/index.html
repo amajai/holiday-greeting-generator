@@ -12,6 +12,11 @@
 <body>
     <h1 id="title">Holiday Greeting Generator App</h1>
     <div class="container mt-5 mx-6">
+        <div class="content is-medium has-text-centered">
+            <p class='has-text-info'>
+                Craft personalized messages or poems for your loved ones, bringing a touch of warmth and joy to your holiday wishes.
+            </p>
+        </div>
         <div class="columns">
             <div class="column">
                 <form id="form">
@@ -20,13 +25,13 @@
                             <div class="field">
                                 <label class="label">Holiday <span class='has-text-danger'>*</span></label>
                                 <div class="control">
-                                  <input class="input" type="text" id='holiday' placeholder="e.g: Xmas, New Year, Eid" required>
+                                  <input class="input" type="text" id='holiday' placeholder="e.g: Xmas, New Year, Eid etc." required>
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="label">Receiver Name</label>
                                 <div class="control">
-                                  <input class="input" type="text" id='receiver_name' placeholder="Text input">
+                                  <input class="input" type="text" id='receiver_name' placeholder="e.g: Sam, Ahmed etc.">
                                 </div>
                             </div>
                         </div>
@@ -36,12 +41,18 @@
                             <div class="field">
                                 <label class="label">Receiver Location</label>
                                 <div class="control">
-                                  <input class="input" type="text" id='receiver_location' placeholder="Text input">
+                                  <input class="input" type="text" id='receiver_location' placeholder="e.g: London, Abuja etc.">
                                 </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Sentiments</label>
+                                <div class="control">
+                                  <input class="input" type="text" id='sentiments' placeholder="e.g: heartfelt thankful humorous etc.">
+                                </div>
+                                <p class="help">Set the emotional tone for the greeting. Separate words with spaces.</p>
                             </div>
                         </div>
                     </div>
-        
                     <div class="field is-horizontal">
                         <div class="field-body">
                             <div class="field">
@@ -58,7 +69,6 @@
                                     </div>
                                 </div>
                             </div>
-        
                             <div class="field">
                                 <label class="label">Greeting Type</label>
                                 <div class="control is-expanded">
@@ -75,25 +85,31 @@
                     <div class="field">
                         <label class="label">Keywords</label>
                         <div class="control">
-                          <input class="input" type="text" id="keywords" placeholder="Text input">
+                          <input class="input" type="text" id="keywords" placeholder='e.g: study work "current health" "fire fighter" etc.'>
                         </div>
-                        <p class="help">Hightlight the words to be mentioned on the greeting. Separate keywords with spaces</p>
+                        <p class="help">Hightlight the words to be mentioned on the greeting. Separate keywords with spaces.</p>
                     </div>
-             
                     <div class="control">
                         <button  type="submit" class="button is-info">Submit</button>
                     </div>
                 </form>
             </div>
             <div class="column contain">
-                <div id="output" class="has-background-info-light my-4">
-                </div>
+                <div id="output" class="has-background-info-light my-4">Generate a greeting...</div>
                 <div id="loader" class="loader-wrapper">
                     <div class="loader is-loading"></div>
                 </div>
+                <button id="copybtn" class="button is-info" onclick="copyText()">Copy Text</button>
             </div>
           </div>
     </div>
+    <footer class="footer has-background-white">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Made by:</strong> <a href="https://github.com/amajai" target="_blank">Abdulmajeed Isa</a>
+          </p>
+        </div>
+    </footer>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>

@@ -5,8 +5,8 @@ from app import app
 import os
 import re
 
-API_URL = "https://api-inference.huggingface.co/models/\
-    HuggingFaceH4/zephyr-7b-beta"
+model_name = "HuggingFaceH4/zephyr-7b-beta"
+API_URL = f"https://api-inference.huggingface.co/models/{model_name}"
 headers = {"Authorization": f"Bearer {os.environ.get('TOKEN')}"}
 
 SYSTEM_PROMPT = """

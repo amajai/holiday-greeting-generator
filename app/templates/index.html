@@ -10,79 +10,89 @@
     <title>Holiday Greeting Generator App</title>
 </head>
 <body>
+    <h1 id="title">Holiday Greeting Generator App</h1>
     <div class="container mt-5 mx-6">
-        <form id="form">
-            <div class="field is-horizontal">
-                <div class="field-body">
-                    <div class="field">
-                        <label class="label">Holiday <span class='has-text-danger'>*</span></label>
-                        <div class="control">
-                          <input class="input" type="text" id='holiday' placeholder="e.g: Xmas, New Year, Eid" required>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Receiver Name</label>
-                        <div class="control">
-                          <input class="input" type="text" id='receiver_name' placeholder="Text input">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="field is-horizontal">
-                <div class="field-body">
-                    <div class="field">
-                        <label class="label">Receiver Location</label>
-                        <div class="control">
-                          <input class="input" type="text" id='receiver_location' placeholder="Text input">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="field is-horizontal">
-                <div class="field-body">
-                    <div class="field">
-                        <label class="label">Relation</label>
-                        <div class="control is-expanded">
-                            <div class="select is-fullwidth">
-                              <select id="select_relation" name="selected_relation">
-                                <option value="Friend">Friend</option>
-                                <option value="Sibling">Sibling</option>
-                                <option value="Acquaintance">Acquaintance</option>
-                                <option value="Spouse">Spouse</option>
-                                <option value="Parent">Parent</option>
-                              </select>
+        <div class="columns">
+            <div class="column">
+                <form id="form">
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <label class="label">Holiday <span class='has-text-danger'>*</span></label>
+                                <div class="control">
+                                  <input class="input" type="text" id='holiday' placeholder="e.g: Xmas, New Year, Eid" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Receiver Name</label>
+                                <div class="control">
+                                  <input class="input" type="text" id='receiver_name' placeholder="Text input">
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="field">
-                        <label class="label">Greeting Type</label>
-                        <div class="control is-expanded">
-                            <div class="select is-fullwidth">
-                              <select id="select_type" name="selected_type">
-                                <option value="Message">Message</option>
-                                <option value="Poem">Poem</option>
-                              </select>
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <label class="label">Receiver Location</label>
+                                <div class="control">
+                                  <input class="input" type="text" id='receiver_location' placeholder="Text input">
+                                </div>
                             </div>
                         </div>
                     </div>
+        
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <label class="label">Relation</label>
+                                <div class="control is-expanded">
+                                    <div class="select is-fullwidth">
+                                      <select id="select_relation" name="selected_relation">
+                                        <option value="Friend">Friend</option>
+                                        <option value="Sibling">Sibling</option>
+                                        <option value="Acquaintance">Acquaintance</option>
+                                        <option value="Spouse">Spouse</option>
+                                        <option value="Parent">Parent</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="field">
+                                <label class="label">Greeting Type</label>
+                                <div class="control is-expanded">
+                                    <div class="select is-fullwidth">
+                                      <select id="select_type" name="selected_type">
+                                        <option value="Message">Message</option>
+                                        <option value="Poem">Poem</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Keywords</label>
+                        <div class="control">
+                          <input class="input" type="text" id="keywords" placeholder="Text input">
+                        </div>
+                        <p class="help">Hightlight the words to be mentioned on the greeting. Separate keywords with spaces</p>
+                    </div>
+             
+                    <div class="control">
+                        <button  type="submit" class="button is-info">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="column contain">
+                <div id="output" class="has-background-info-light my-4">
+                </div>
+                <div id="loader" class="loader-wrapper">
+                    <div class="loader is-loading"></div>
                 </div>
             </div>
-            <div class="field">
-                <label class="label">Keywords</label>
-                <div class="control">
-                  <input class="input" type="text" id="keywords" placeholder="Text input">
-                </div>
-                <p class="help">Hightlight the words to be mentioned on the greeting. Separate keywords with spaces</p>
-            </div>
-     
-            <div class="control">
-                <button  type="submit" class="button is-info">Submit</button>
-            </div>
-        </form>
-        <p id="loader">Loading...</p>
-        <div id="output" class="has-background-info-light my-4"></div>
+          </div>
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

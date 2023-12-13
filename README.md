@@ -17,7 +17,7 @@ The greeting generation process involves seven input parameters, with one being 
 - Holiday: New Year
 ### Optional Inputs:
 - Receiver Name: John Doe
-- Receiver Location: Cityville
+- Receiver Location: Abuja
 - Sentiments: Warm joyful
 - Relation: Friend
 - Greeting Type: Formal

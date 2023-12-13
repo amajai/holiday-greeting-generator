@@ -10,7 +10,14 @@ The App leverages Zephyr-7B-β, a fine-tuned model in the Zephyr series, designe
 
 ## Features
 1. Holiday Selection: Choose from a variety of holidays, occasions, special days/weeks/months to tailor your greeting.
-1. Optional Inputs: Personalize your greeting further by providing optional details.
+1. Optional Inputs: Personalize your greeting further by providing optional details:
+      - Receiver Name - The name of the person to whom the holiday greeting is addressed.
+      - Receiver Location - The location or place where the receiver is currently situated.
+      - Sentiments - The emotional tone or feelings expressed in the greeting, such as joyous, warm, or celebratory.
+      - Relation - The nature of the relationship between the sender and the receiver (e.g., friend, family, colleague).
+      - Greeting Type - The style or formality of the greeting, whether it's formal, casual, or personalized.
+      - Keywords - Specific words or phrases to be incorporated into the greeting for added personalization or thematic relevance.
+1. Button to easily copy generated text: with one click, you can copy the generated greeting.
 
 ## Sample Usage
 The greeting generation process involves seven input parameters, with one being mandatory while the remaining six are optional. An illustrative example is provided below for reference:

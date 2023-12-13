@@ -1,7 +1,7 @@
 # Holiday Greeting Generator App
 ![Animation2](https://github.com/amajai/holiday-greeting-generator/assets/44467524/020f425f-4985-4f38-9485-f5e8f98b43aa)
 
-Link: https://holiday-greeting-generator.onrender.com
+Link: https://holiday-greeting-generator.onrender.com (The web app may take a few seconds to load up)
 
 An Artificial Intelligence (AI) text generation application that lets you generate personalized holiday greetings for various occasions! Whether it's Christmas, New Year, Eid, or any other special day, this app is here to help you spread joy and warmth with customized greetings. It is powered by a Large Language Model (LLM) called Zephyr-7B-β.
 

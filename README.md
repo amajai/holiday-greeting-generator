@@ -3,7 +3,7 @@
 
 Link: https://holiday-greeting-generator.onrender.com (The web app may take a few seconds to load up)
 
-An Artificial Intelligence (AI) text generation application that lets you generate personalized holiday greetings for various occasions! Whether it's Christmas, New Year, Eid, or any other special day, this app is here to help you spread joy and warmth with customized greetings. It is powered by a Large Language Model (LLM) called Zephyr-7B-β.
+An Artificial Intelligence (AI) text generation application that lets you generate personalized holiday greetings for various occasions! Whether it's Christmas, New Year, Eid, or any other special day, this app is here to help you spread joy and warmth with customized greetings. It is powered by a Large Language Model (LLM) called Zephyr-7B-β through HuggingFace Inference API.
 
 ## Overview
 The App leverages Zephyr-7B-β, a fine-tuned model in the Zephyr series, designed to act as a helpful assistant. Trained on a mix of publicly available and synthetic datasets using Direct Preference Optimization (DPO), this language model brings a touch of personalization to your holiday greetings.

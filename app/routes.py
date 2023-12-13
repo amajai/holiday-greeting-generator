@@ -1,25 +1,19 @@
 from app import app
-from flask import render_template, jsonify, request, render_template_string
+from flask import render_template, request
 import requests
 from app import app
 import os
 import re
+from app.variables import (
+    USER_PROMPT,
+    SYSTEM_PROMPT,
+    KIMBA_SYSTEM_PROMPT,
+    KIMBA_USER_PROMPT
+)
 
 model_name = "HuggingFaceH4/zephyr-7b-beta"
 API_URL = f"https://api-inference.huggingface.co/models/{model_name}"
 headers = {"Authorization": f"Bearer {os.environ.get('TOKEN')}"}
-
-SYSTEM_PROMPT = """
-You are an AI whose only job is to write holiday greetings messages, special
-day or month greetings, and greeting poems when asked to and nothing else.
-If the question the user provides is not related what you do, say that
-you only do greetings text generation.
-"""
-
-USER_PROMPT = """
-Write a {holiday} greeting {select_type} to a {select_relation}
-{receiver_name} {receiver_location}{keywords}{sentiments}
-"""
 
 
 def post_request(payload):
@@ -42,7 +36,7 @@ def post_request(payload):
     return response.json()
 
 
-def get_prompt_result(user_prompt=USER_PROMPT, system_prompt=SYSTEM_PROMPT):
+def get_prompt_result(user_prompt, system_prompt):
     """
     Retrieves the result of a language model generation based on user and
     system prompts.
@@ -109,39 +103,41 @@ def index():
     """
     if request.method == "POST":
         holiday = request.form['holiday']
-
-        receiver_name = request.form['receiver_name']
-        receiver_name = f"with the name {receiver_name}"\
-            if receiver_name else ''
-
-        receiver_location = request.form['receiver_location']
-        receiver_location = f"in {receiver_location}" \
-            if receiver_location else ''
-
-        select_relation = request.form['select_relation']
         select_type = request.form['select_type']
+        receiver_name = request.form['receiver_name'].lower().strip()
+        if not receiver_name == 'kimba':
+            receiver_name = f"with the name {receiver_name}"\
+                if receiver_name else ''
 
-        keywords_string = text_to_prompt_string(request.form['keywords'])
-        keywords = f". Make mention or highlight on {keywords_string}" \
-            if keywords_string else ''
+            receiver_location = request.form['receiver_location']
+            receiver_location = f"in {receiver_location}" \
+                if receiver_location else ''
 
-        sentiments_text = text_to_prompt_string(request.form['sentiments'])
-        sentiments = f". The greeting tone should be {sentiments_text}" \
-            if sentiments_text else ''
+            select_relation = request.form['select_relation']
 
-        if holiday:
+            keywords_string = text_to_prompt_string(request.form['keywords'])
+            keywords = f". Make mention or highlight on {keywords_string}" \
+                if keywords_string else ''
+
+            sentiments_text = text_to_prompt_string(request.form['sentiments'])
+            sentiments = f". The greeting tone should be {sentiments_text}" \
+                if sentiments_text else ''
+
             user_prompt = USER_PROMPT.format(
-                holiday=holiday,
-                receiver_name=receiver_name,
-                receiver_location=receiver_location,
-                select_relation=select_relation,
-                select_type=select_type,
-                keywords=keywords,
-                sentiments=sentiments,
-            )
-            print(user_prompt)
-            output = get_prompt_result(user_prompt)
-            return output
-        return jsonify({'output': "No text was generated. Please try \
-                        submitting again"})
+                    holiday=holiday,
+                    receiver_name=receiver_name,
+                    receiver_location=receiver_location,
+                    select_relation=select_relation,
+                    select_type=select_type,
+                    keywords=keywords,
+                    sentiments=sentiments,
+                )
+            output = get_prompt_result(user_prompt, SYSTEM_PROMPT)
+        else:
+            user_prompt = KIMBA_USER_PROMPT.format(
+                    holiday=holiday,
+                    select_type=select_type,
+                )
+            output = get_prompt_result(user_prompt, KIMBA_SYSTEM_PROMPT)
+        return output
     return render_template("index.html")

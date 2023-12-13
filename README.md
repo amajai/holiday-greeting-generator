@@ -1,4 +1,5 @@
 # Holiday Greeting Generator App
+![Animation2](https://github.com/amajai/holiday-greeting-generator/assets/44467524/020f425f-4985-4f38-9485-f5e8f98b43aa)
 
 Link: https://holiday-greeting-generator.onrender.com
 

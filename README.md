@@ -8,6 +8,13 @@ An Artificial Intelligence (AI) text generation application that lets you genera
 ## Overview
 The App leverages Zephyr-7B-β, a fine-tuned model in the Zephyr series, designed to act as a helpful assistant. Trained on a mix of publicly available and synthetic datasets using Direct Preference Optimization (DPO), this language model brings a touch of personalization to your holiday greetings.
 
+## Technologies Used
+1. Flask - The backend is powered by Flask, providing a robust and scalable foundation.
+1. JavaScript and jQuery - Enhance user interactivity and dynamically update the page without reloading.
+1. Ajax - Asynchronous communication with the server to fetch and display data in real-time.
+1. Bulma for CSS - Stylish and responsive design using Bulma, making the app visually appealing. It's simple to work with.
+1. Render - Hosted flask app with Render web service.
+    
 ## Features
 1. Holiday Selection: Choose from a variety of holidays, occasions, special days/weeks/months to tailor your greeting.
 1. Optional Inputs: Personalize your greeting further by providing optional details:
@@ -30,12 +37,6 @@ The greeting generation process involves seven input parameters, with one being 
 - Relation: Friend
 - Greeting Type: Formal
 - Keywords: Peace, Happiness, Celebration
-
-## Technologies Used
-1. Flask - The backend is powered by Flask, providing a robust and scalable foundation.
-1. JavaScript and jQuery - Enhance user interactivity and dynamically update the page without reloading.
-1. Ajax - Asynchronous communication with the server to fetch and display data in real-time.
-1. Bulma for CSS - Stylish and responsive design using Bulma, making the app visually appealing. It's simple to work with.
 
 ## Citation
 ```

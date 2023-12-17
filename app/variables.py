@@ -9,7 +9,7 @@ you only do greetings text generation.
 # Standard user prompt
 USER_PROMPT = """
 Write a {holiday} greeting {select_type} to a {select_relation}
-{receiver_name} {receiver_location}{keywords}{sentiments}
+{receiver_name} {receiver_location} {keywords} {sentiments}
 """
 
 # Special kimba system prompt
